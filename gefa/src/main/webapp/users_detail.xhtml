@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<link href="css/gefa.css" type="text/css" rel="stylesheet" />
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:tabMenu activeIndex="0">
+			<p:menuitem value="#{msg['tab.users']}" icon="ui-icon-locked" />
+			<p:menuitem value="Demos" />
+			<p:menuitem value="Documentation" />
+			<p:menuitem value="Support" />
+			<p:menuitem value="Social" />
+		</p:tabMenu>
+		<p:panel id="basic" header="Basic" style="margin-bottom:20px">
+			<h:panelGrid columns="2">
+				<h:outputText value="#{msg['user.catalog.image']}" />
+				<h:outputText value="#{msg['user.catalog.add.image']}" />
+			</h:panelGrid>
+			<h:panelGrid columns="4">
+				<h:outputText value="#{msg['user.catalog.name']}" style="font-size : 12px"/>
+				<h:inputText />
+				<h:outputText value="#{msg['user.catalog.surname']}" />
+				<h:inputText />
+				<h:outputText value="#{msg['user.catalog.username']}" />
+				<h:inputText />
+				<h:outputText value="#{msg['user.catalog.factory']}" />
+				<h:inputText />
+				<h:outputText value="#{msg['user.catalog.email']}" />
+				<h:inputText />
+				<h:outputText value="#{msg['user.catalog.phone']}" />
+				<h:inputText />
+				<h:outputText value="#{msg['user.catalog.role']}" />
+				<h:inputText />
+				<h:outputText value="#{msg['user.catalog.password']}" />
+				<p:password />
+				<h:outputText value="#{msg['user.catalog.confirm.password']}" />
+				<p:password />
+				<h:outputText value="#{msg['user.catalog.join.date']}" />
+				<h:inputText />
+				<h:outputText value="#{msg['user.catalog.last.update.date']}" />
+				<h:inputText />
+				<p:separator />
+			</h:panelGrid>
+			<h:panelGrid columns="1">
+				<h:outputText value="#{msg['catalog.general.save.label']}" />
+			</h:panelGrid>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

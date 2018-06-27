@@ -1,0 +1,83 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+</h:head>
+
+<h:body>
+	    <p:dataTable var="user" value="#{userCatalog.userList}" rows="10"
+                         paginator="true"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+  	                       rowsPerPageTemplate="5,10,15">
+  	                       
+        <f:facet name="{Exporters}">
+            <h:commandLink>
+                <p:graphicImage name="/gefa/images/excel.png" width="24"/>
+                <p:dataExporter type="xls" target="tbl" fileName="users" />
+            </h:commandLink>
+ 
+            <h:commandLink>
+                <p:graphicImage name="/gefa/images/pdf.png" width="24"/>
+                <p:dataExporter type="pdf" target="tbl" fileName="users"/>
+            </h:commandLink>
+ 
+        </f:facet>
+  	                       
+  	                       
+  	                       
+        <p:column headerText="#{msg['user.catalog.username']}">
+            <h:outputText value="#{user.id}" />
+        </p:column>
+ 
+        <p:column headerText="Year">
+            <h:outputText value="#{user.year}" />
+        </p:column>
+ 
+        <p:column headerText="Brand">
+            <h:outputText value="#{car.brand}" />
+        </p:column>
+ 
+        <p:column headerText="Color">
+            <h:outputText value="#{car.color}" />
+        </p:column>
+         
+        <f:facet name="paginatorTopLeft">
+            <p:commandButton type="button" icon="fa fa-sync" />
+        </f:facet>
+ 
+        <f:facet name="paginatorBottomRight">
+            <p:commandButton type="button" icon="fa fa-cloud-upload" />
+        </f:facet>
+    </p:dataTable>
+
+
+
+	<h:panelGroup>
+		<h:panelGrid columns="2">
+			<h:outputText value="#{msg['user.catalog.image']}" />
+			<h:outputText value="#{msg['user.catalog.add.image']}" />
+		</h:panelGrid>	
+		<h:panelGrid columns="4">	
+			<h:outputText value="#{msg['user.catalog.name']}" />
+			<h:outputText value="#{msg['user.catalog.surname']}"/>
+			<h:outputText value="#{msg['user.catalog.username']}"/>
+			<h:outputText value="#{msg['user.catalog.factory']}"/>
+			<h:outputText value="#{msg['user.catalog.email']}"/>
+			<h:outputText value="#{msg['user.catalog.phone']}"/>
+			<h:outputText value="#{msg['user.catalog.role']}"/>
+			<h:outputText value="#{msg['user.catalog.password']}" />
+			<h:outputText value="#{msg['user.catalog.confirm.password']}"/>
+			<h:outputText value="#{msg['user.catalog.join.date']}" />
+			<h:outputText value="#{msg['user.catalog.last.update.date']}"/>
+		</h:panelGrid>
+		<h:panelGrid columns="1">
+			<h:outputText value="#{msg['catalog.general.save.label']}" />
+		</h:panelGrid>	
+	</h:panelGroup>
+
+
+</h:body>
+</html>
