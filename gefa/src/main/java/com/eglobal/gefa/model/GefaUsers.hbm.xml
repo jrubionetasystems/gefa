@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 1/07/2018 09:11:30 PM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="gefa" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.eglobal.gefa.model.GefaUsers" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="GEFA_USERS">
+        <composite-id class="com.eglobal.gefa.model.GefaUsersId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="username" type="string">
+                <column length="20" name="username"/>
+            </key-property>
+            <key-property name="surname" type="string">
+                <column length="50" name="surname"/>
+            </key-property>
+            <key-property name="name" type="string">
+                <column length="40" name="name"/>
+            </key-property>
+            <key-property name="email" type="string">
+                <column length="100" name="email"/>
+            </key-property>
+            <key-property name="telephone" type="string">
+                <column length="20" name="telephone"/>
+            </key-property>
+            <key-property name="idRole" type="string">
+                <column length="20" name="id_role"/>
+            </key-property>
+            <key-property name="idFactory" type="string">
+                <column length="20" name="id_factory"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="com.eglobal.gefa.model.GefaFactory" embed-xml="true" fetch="select" insert="false" name="gefaFactory" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column length="20" name="id_factory"/>
+        </many-to-one>
+        <many-to-one class="com.eglobal.gefa.model.GefaRole" embed-xml="true" fetch="select" insert="false" name="gefaRole" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column length="20" name="id_role"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

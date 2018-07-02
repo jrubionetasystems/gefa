@@ -1,0 +1,57 @@
+src/main/java/com/eglobal/gefa/dto/FactoryDTO.java:5:	Each class should declare at least one constructor
+src/main/java/com/eglobal/gefa/dto/FactoryDTO.java:5:	Header comments are required
+src/main/java/com/eglobal/gefa/dto/FactoryDTO.java:10:	Avoid variables with short names like id
+src/main/java/com/eglobal/gefa/dto/FactoryDTO.java:10:	Field comments are required
+src/main/java/com/eglobal/gefa/dto/FactoryDTO.java:10:	To avoid mistakes add a comment at the beginning of the id field if you want a default access modifier
+src/main/java/com/eglobal/gefa/dto/FactoryDTO.java:10:	Use explicit scoping instead of the default package private level
+src/main/java/com/eglobal/gefa/dto/FactoryDTO.java:11:	Field comments are required
+src/main/java/com/eglobal/gefa/dto/FactoryDTO.java:11:	To avoid mistakes add a comment at the beginning of the factoryName field if you want a default access modifier
+src/main/java/com/eglobal/gefa/dto/FactoryDTO.java:11:	Use explicit scoping instead of the default package private level
+src/main/java/com/eglobal/gefa/dto/RoleDTO.java:5:	Each class should declare at least one constructor
+src/main/java/com/eglobal/gefa/dto/RoleDTO.java:5:	Header comments are required
+src/main/java/com/eglobal/gefa/dto/RoleDTO.java:10:	Avoid variables with short names like id
+src/main/java/com/eglobal/gefa/dto/RoleDTO.java:10:	Field comments are required
+src/main/java/com/eglobal/gefa/dto/RoleDTO.java:10:	To avoid mistakes add a comment at the beginning of the id field if you want a default access modifier
+src/main/java/com/eglobal/gefa/dto/RoleDTO.java:10:	Use explicit scoping instead of the default package private level
+src/main/java/com/eglobal/gefa/dto/RoleDTO.java:11:	Field comments are required
+src/main/java/com/eglobal/gefa/dto/RoleDTO.java:11:	To avoid mistakes add a comment at the beginning of the roleName field if you want a default access modifier
+src/main/java/com/eglobal/gefa/dto/RoleDTO.java:11:	Use explicit scoping instead of the default package private level
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:10:	The class 'UserDTO' is suspected to be a Data Class (WOC=0.000%, NOPA=0, NOAM=24, WMC=24)
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:69:	Comment is too large: Too many lines
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:83:	Avoid long parameter lists.
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:83:	Parameter 'email' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:83:	Parameter 'name' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:83:	Parameter 'role' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:83:	Parameter 'surname' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:83:	Parameter 'telephone' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:83:	Parameter 'username' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:83:	The constructor 'UserDTO(String, String, String, String, String, RoleDTO, FactoryDTO, String, String, String, Date, Date)' has a NCSS line count of 13.
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:84:	Parameter 'confirmPassword' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:84:	Parameter 'factory' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:84:	Parameter 'joinDate' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:84:	Parameter 'password' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:84:	Parameter 'status' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:85:	Parameter 'lastUpdateDate' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:105:	Parameter 'username' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:117:	Parameter 'surname' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:129:	Parameter 'name' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:141:	Parameter 'email' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:153:	Parameter 'telephone' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:165:	Parameter 'role' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:177:	Parameter 'factory' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:189:	Parameter 'status' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:201:	Parameter 'password' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:213:	Parameter 'confirmPassword' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:225:	Parameter 'joinDate' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/dto/UserDTO.java:237:	Parameter 'lastUpdateDate' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/managedBean/UsersManagedBean.java:1:	Package name contains upper case characters
+src/main/java/com/eglobal/gefa/managedBean/UsersManagedBean.java:13:	Header comments are required
+src/main/java/com/eglobal/gefa/managedBean/UsersManagedBean.java:19:	Field comments are required
+src/main/java/com/eglobal/gefa/managedBean/UsersManagedBean.java:25:	Parameter 'user' is not assigned and could be declared final
+src/main/java/com/eglobal/gefa/managedBean/UsersManagedBean.java:29:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/com/eglobal/gefa/managedBean/UsersManagedBean.java:29:	Document empty constructor
+src/main/java/com/eglobal/gefa/managedBean/UsersManagedBean.java:29:	Public method and constructor comments are required
+src/main/java/com/eglobal/gefa/managedBean/UsersManagedBean.java:34:	Document empty method body
+src/main/java/com/eglobal/gefa/managedBean/UsersManagedBean.java:34:	Public method and constructor comments are required
+src/main/java/com/eglobal/gefa/view/UserCatalog.java:3:	Each class should declare at least one constructor
+src/main/java/com/eglobal/gefa/view/UserCatalog.java:3:	Header comments are required
