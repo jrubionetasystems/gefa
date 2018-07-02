@@ -9,5 +9,25 @@
     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd    
     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <bean id="Datasource"
+    	class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    	<property name="url" value="jdbc:mysql://13.59.30.37:3306/gefa"/>
+    	<property name="username" value="gefa" /> 
+    	<property name="password" value="g3f4p4ss"/>
+    </bean>
+    
+    <bean id="defaultLobHandler" class="org.springframework.jdbc.support.lob.DefaultHandler"></bean>
+    
+    <bean id="sessionFactoty"
+    	class="org.springframework.orm.hibernate5.localSessionFactoryBean">
+		<property name="datasoruce" ref="Datasource"/>
+		<property name="configurations">
+			<list>
+				<value>/WEB-INF/hibernate.cfg.xml</value>
+			</list>
+		</property>
+    </bean>
 
 </beans>

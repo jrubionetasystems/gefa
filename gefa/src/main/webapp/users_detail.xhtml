@@ -10,11 +10,21 @@
 <h:body>
 	<h:form>
 		<p:tabMenu activeIndex="0">
-			<p:menuitem value="#{msg['tab.users']}" icon="ui-icon-locked" />
-			<p:menuitem value="Demos" />
-			<p:menuitem value="Documentation" />
-			<p:menuitem value="Support" />
-			<p:menuitem value="Social" />
+			<p:menuitem value="#{msg['menu.tab.followup.and.control']}"
+				icon="ui-icon-clipboard"/>
+			<p:menuitem value="#{msg['menu.tab.new.work.order.programs']}"
+				icon="ui-icon-plus" />
+			<p:menuitem value="#{msg['menu.tab.questions']}"
+				icon="ui-icon-help" />
+			<p:menuitem value="#{msg['menu.tab.defects']}" icon="ui-icon-closethick" />
+			<p:menuitem value="#{msg['menu.tab.desviations']}"
+				icon="ui-icon-shuffle" />
+			<p:menuitem value="#{msg['menu.tab.dashboard']}"
+				icon="ui-icon-image" />
+			<p:menuitem value="#{msg['menu.tab.users']}" icon="ui-icon-locked" />
+			<p:menuitem value="#{msg['menu.tab.parameters']}"
+				icon="ui-icon-gear" />
+
 		</p:tabMenu>
 		<p:panel id="basic" header="Basic" style="margin-bottom:20px">
 			<h:panelGrid columns="2">
@@ -22,7 +32,8 @@
 				<h:outputText value="#{msg['user.catalog.add.image']}" />
 			</h:panelGrid>
 			<h:panelGrid columns="4">
-				<h:outputText value="#{msg['user.catalog.name']}" style="font-size : 12px"/>
+				<h:outputText value="#{msg['user.catalog.name']}"
+					style="font-size : 12px" />
 				<h:inputText />
 				<h:outputText value="#{msg['user.catalog.surname']}" />
 				<h:inputText />

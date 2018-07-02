@@ -21,9 +21,14 @@
      </listener-class>
   </listener>   
 
-<!-- JSF  -->
+  <listener>
+     <listener-class>
+        com.sun.faces.config.ConfigureListener
+     </listener-class>
+  </listener>   
 
-  
+
+<!-- JSF  -->
   <servlet>
     <servlet-name>Faces Servlet</servlet-name>
     <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -47,10 +52,5 @@
   	<param-name>primefaces.THEME</param-name>
 	<param-value>cupertino</param-value>
   </context-param>
-  
-  
-  
-  <listener>
-    <listener-class>com.sun.faces.config.ConfigureListener</listener-class>
-  </listener>
+    
 </web-app>

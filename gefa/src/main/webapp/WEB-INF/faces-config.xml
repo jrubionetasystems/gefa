@@ -13,5 +13,9 @@
 			<var>msg</var>
 		</resource-bundle>
 	</application>
+	
+	<application>
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+	</application>
 
 </faces-config>
