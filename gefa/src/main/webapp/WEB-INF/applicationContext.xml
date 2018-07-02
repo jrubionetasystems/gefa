@@ -18,9 +18,9 @@
     	<property name="password" value="g3f4p4ss"/>
     </bean>
     
-    <bean id="defaultLobHandler" class="org.springframework.jdbc.support.lob.DefaultHandler"></bean>
+    <bean id="defaultLobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler"></bean>
     
-    <bean id="sessionFactoty"
+    <bean id="sessionFactory"
     	class="org.springframework.orm.hibernate5.localSessionFactoryBean">
 		<property name="datasoruce" ref="Datasource"/>
 		<property name="configurations">
