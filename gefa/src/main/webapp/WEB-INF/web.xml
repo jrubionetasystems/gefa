@@ -21,6 +21,8 @@
      </listener-class>
   </listener>   
 
+<!--  Fin Spring -->
+
   <listener>
      <listener-class>
         com.sun.faces.config.ConfigureListener

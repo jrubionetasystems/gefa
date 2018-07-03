@@ -8,7 +8,7 @@
 </h:head>
 
 <h:body>
-	<h:form>
+	<h:form id="user_detail">
 		<p:tabMenu activeIndex="0">
 			<p:menuitem value="#{msg['menu.tab.followup.and.control']}"
 				icon="ui-icon-clipboard"/>
@@ -32,28 +32,35 @@
 				<h:outputText value="#{msg['user.catalog.add.image']}" />
 			</h:panelGrid>
 			<h:panelGrid columns="4">
-				<h:outputText value="#{msg['user.catalog.name']}"
-					style="font-size : 12px" />
+				<h:outputText value="#{msg['user.catalog.name']}" style="font-size : 12px" />
+				<h:inputText id="input_name"/>
+				<h:outputText value="#{msg['user.catalog.surname']}" style="font-size : 12px"/>
+				<h:inputText id="input_surname"/>
+				<p:column colspan="2">
+				<p:message id="error_name" for="input_name"></p:message>
+				</p:column>
+				<p:column colspan="2">
+				<p:message id="error_surname" for="input_surname"></p:message>
+				</p:column>
+				<h:outputText value="#{msg['user.catalog.username']}" style="font-size : 12px"/>
+				<h:inputText id="input_username"/>
+				<h:outputText value="#{msg['user.catalog.factory']}" style="font-size : 12px"/>
 				<h:inputText />
-				<h:outputText value="#{msg['user.catalog.surname']}" />
+				<h:outputText value="#{msg['user.catalog.email']}" style="font-size : 12px"/>
 				<h:inputText />
-				<h:outputText value="#{msg['user.catalog.username']}" />
+				<h:outputText value="#{msg['user.catalog.phone']}" style="font-size : 12px"/>
+				<h:inputText id="input_phone"/>
+				<h:outputText value="#{msg['user.catalog.role']}" style="font-size : 12px"/>
 				<h:inputText />
-				<h:outputText value="#{msg['user.catalog.factory']}" />
-				<h:inputText />
-				<h:outputText value="#{msg['user.catalog.email']}" />
-				<h:inputText />
-				<h:outputText value="#{msg['user.catalog.phone']}" />
-				<h:inputText />
-				<h:outputText value="#{msg['user.catalog.role']}" />
-				<h:inputText />
-				<h:outputText value="#{msg['user.catalog.password']}" />
+				<h:outputText value="#{msg['user.catalog.estatus']}" style="font-size : 12px"/>
+				<h:inputText id="input_password"/>
+				<h:outputText value="#{msg['user.catalog.password']}" style="font-size : 12px"/>
 				<p:password />
-				<h:outputText value="#{msg['user.catalog.confirm.password']}" />
-				<p:password />
-				<h:outputText value="#{msg['user.catalog.join.date']}" />
+				<h:outputText value="#{msg['user.catalog.confirm.password']}" style="font-size : 12px"/>
+				<p:password id="input_confirmPassword"/>
+				<h:outputText value="#{msg['user.catalog.join.date']}" style="font-size : 12px"/>
 				<h:inputText />
-				<h:outputText value="#{msg['user.catalog.last.update.date']}" />
+				<h:outputText value="#{msg['user.catalog.last.update.date']}" style="font-size : 12px"/>
 				<h:inputText />
 				<p:separator />
 			</h:panelGrid>

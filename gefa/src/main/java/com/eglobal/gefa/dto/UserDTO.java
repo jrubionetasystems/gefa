@@ -2,6 +2,7 @@ package com.eglobal.gefa.dto;
 
 import java.io.Serializable;
 import java.util.Date;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 
 /**

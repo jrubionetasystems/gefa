@@ -21,13 +21,15 @@
     <bean id="defaultLobHandler" class="org.springframework.jdbc.support.lob.DefaultLobHandler"></bean>
     
     <bean id="sessionFactory"
-    	class="org.springframework.orm.hibernate5.localSessionFactoryBean">
-		<property name="datasoruce" ref="Datasource"/>
-		<property name="configurations">
+    	class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="Datasource"/>
+
+		<property name="configLocations">
 			<list>
 				<value>/WEB-INF/hibernate.cfg.xml</value>
 			</list>
 		</property>
+
     </bean>
 
 </beans>

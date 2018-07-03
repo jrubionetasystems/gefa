@@ -4,9 +4,12 @@
 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+    	<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.password">g3f4p4ss</property>
-        <property name="hibernate.connection.url">jdbc:mysql://13.59.30.37:3306/gefa</property>
-        <property name="hibernate.connection.username">gefa</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <!-- Pojos Mapping -->
+        <mapping resource="/com/eglobal/gefa/model/GefaUsers.hbm.xml"/>
+        <mapping resource="/com/eglobal/gefa/model/GefaRole.hbm.xml"/>
+        <mapping resource="/com/eglobal/gefa/model/GefaFactory.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
