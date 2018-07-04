@@ -3,6 +3,7 @@ package com.eglobal.gefa.dao.impl;
 import java.io.Serializable;
 import java.util.List;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -12,6 +13,10 @@ import com.eglobal.gefa.model.GefaFactory;
 import com.eglobal.gefa.model.GefaRole;
 import com.eglobal.gefa.model.GefaUsers;
 
+/**
+ * This class implements Data Access method for User Catalog
+ * @author Neta Systems / Jorge Rubio
+ */
 public class UserDAOImpl implements UserDAO, Serializable {
 
 	/**
@@ -34,14 +39,22 @@ public class UserDAOImpl implements UserDAO, Serializable {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<GefaUsers> getUsers() throws DaoException {
+		
 		Session session = null;
 		List<GefaUsers> result = null;
+		
+		session = sessionFactory.openSession();
+		result = session.createQuery("FROM GefaUsers").getResultList();
+		// return result;
+		
 		try {
 			session = sessionFactory.openSession();
 			result = session.createQuery("FROM GefaUsers").getResultList();
 			return result;
+		} catch (HibernateException hex) {
+			throw new DaoException(hex);
 		} catch (Exception e) {
-			throw new DaoException();
+			throw new DaoException(e);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
@@ -59,7 +72,7 @@ public class UserDAOImpl implements UserDAO, Serializable {
 			result = session.createQuery("FROM GefaRole").getResultList();
 			return result;
 		} catch (Exception e) {
-			throw new DaoException();
+			throw new DaoException(e);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
@@ -77,12 +90,18 @@ public class UserDAOImpl implements UserDAO, Serializable {
 			result = session.createQuery("FROM GefaFactory").getResultList();
 			return result;
 		} catch (Exception e) {
-			throw new DaoException();
+			throw new DaoException(e);
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
 			}	
 		}
+	}
+
+	@Override
+	public void insertOrUpdateUser(GefaUsers user) throws DaoException {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
