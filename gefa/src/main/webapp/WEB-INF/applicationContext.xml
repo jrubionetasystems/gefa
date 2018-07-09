@@ -32,4 +32,18 @@
 
     </bean>
 
+	<bean id="UserBusiness" class="com.eglobal.gefa.business.impl.UserBusinessImpl" >
+		<property name="userDao" ref="UserDao"/>
+	</bean>
+
+	<bean id="UserDao" class="com.eglobal.gefa.dao.impl.UserDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="txManager"/>
+	
+	<bean id="txManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager" >
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
 </beans>

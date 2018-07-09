@@ -8,7 +8,7 @@
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <!-- Pojos Mapping -->
-        <mapping resource="/com/eglobal/gefa/model/GefaUsers.hbm.xml"/>
+        <mapping resource="/com/eglobal/gefa/model/GefaUser.hbm.xml"/>
         <mapping resource="/com/eglobal/gefa/model/GefaRole.hbm.xml"/>
         <mapping resource="/com/eglobal/gefa/model/GefaFactory.hbm.xml"/>
     </session-factory>

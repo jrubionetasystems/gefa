@@ -11,9 +11,46 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
  */
 public class UserDTO implements Serializable {
 	/**
+	 * @param id
+	 * @param username
+	 * @param surname
+	 * @param name
+	 * @param email
+	 * @param telephone
+	 * @param role
+	 * @param factory
+	 * @param status
+	 * @param password
+	 * @param confirmPassword
+	 * @param joinDate
+	 * @param lastUpdateDate
+	 */
+	public UserDTO(String id, String username, String surname, String name, String email, String telephone,
+			RoleDTO role, FactoryDTO factory, String status, String password, String confirmPassword, Date joinDate,
+			Date lastUpdateDate) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.surname = surname;
+		this.name = name;
+		this.email = email;
+		this.telephone = telephone;
+		this.role = role;
+		this.factory = factory;
+		this.status = status;
+		this.password = password;
+		this.confirmPassword = confirmPassword;
+		this.joinDate = joinDate;
+		this.lastUpdateDate = lastUpdateDate;
+	}
+	/**
 	 * UID for serializable classes.
 	 */
 	private static final long serialVersionUID = 3460708380755144634L;
+	/** 
+	 * Id User
+	 */
+	private String id;
 	/**
 	 * Username to login
 	 */
@@ -63,44 +100,23 @@ public class UserDTO implements Serializable {
 	 */
 	private Date lastUpdateDate;
 	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
+	/**
 	 * @return the username
 	 */
 	public String getUsername() {
 		return username;
-	}
-	/**
-	 * @param username
-	 * @param surname
-	 * @param name
-	 * @param email
-	 * @param telephone
-	 * @param role
-	 * @param factory
-	 * @param status
-	 * @param password
-	 * @param confirmPassword
-	 * @param joinDate
-	 * @param lastUpdateDate
-	 */
-	public UserDTO(String username, String surname, String name, String email, String telephone, RoleDTO role,
-			FactoryDTO factory, String status, String password, String confirmPassword, Date joinDate,
-			Date lastUpdateDate) {
-		this.username = username;
-		this.surname = surname;
-		this.name = name;
-		this.email = email;
-		this.telephone = telephone;
-		this.role = role;
-		this.factory = factory;
-		this.status = status;
-		this.password = password;
-		this.confirmPassword = confirmPassword;
-		this.joinDate = joinDate;
-		this.lastUpdateDate = lastUpdateDate;
-	}
-
-	
-	
+	}	
 	/**
 	 * @param username the username to set
 	 */

@@ -11,7 +11,7 @@ import com.eglobal.gefa.dao.UserDAO;
 import com.eglobal.gefa.exception.DaoException;
 import com.eglobal.gefa.model.GefaFactory;
 import com.eglobal.gefa.model.GefaRole;
-import com.eglobal.gefa.model.GefaUsers;
+import com.eglobal.gefa.model.GefaUser;
 
 /**
  * This class implements Data Access method for User Catalog
@@ -38,18 +38,13 @@ public class UserDAOImpl implements UserDAO, Serializable {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<GefaUsers> getUsers() throws DaoException {
+	public List<GefaUser> getUsers() throws DaoException {
 		
 		Session session = null;
-		List<GefaUsers> result = null;
-		
-		session = sessionFactory.openSession();
-		result = session.createQuery("FROM GefaUsers").getResultList();
-		// return result;
-		
+		List<GefaUser> result = null;
 		try {
 			session = sessionFactory.openSession();
-			result = session.createQuery("FROM GefaUsers").getResultList();
+			result = session.createQuery("FROM GefaUser").getResultList();
 			return result;
 		} catch (HibernateException hex) {
 			throw new DaoException(hex);
@@ -99,8 +94,18 @@ public class UserDAOImpl implements UserDAO, Serializable {
 	}
 
 	@Override
-	public void insertOrUpdateUser(GefaUsers user) throws DaoException {
-		// TODO Auto-generated method stub
+	public void insertOrUpdateUser(GefaUser user) throws DaoException {
+		Session session = null;
+		try {
+			session = sessionFactory.openSession();
+			session.saveOrUpdate(user);
+		} catch (Exception e) {
+			throw new DaoException(e);
+		} finally {
+			if (session != null && session.isOpen()) {
+				session.close();
+			}	
+		}
 		
 	}
 

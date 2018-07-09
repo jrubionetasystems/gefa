@@ -1,5 +1,5 @@
 package com.eglobal.gefa.model;
-// Generated 1/07/2018 09:11:29 PM by Hibernate Tools 5.0.6.Final
+// Generated 4/07/2018 10:11:17 AM by Hibernate Tools 5.0.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +11,7 @@ public class GefaRole implements java.io.Serializable {
 
 	private String idRole;
 	private String roleName;
-	private Set gefaUserses = new HashSet(0);
+	private Set gefaUsers = new HashSet(0);
 
 	public GefaRole() {
 	}
@@ -20,10 +20,10 @@ public class GefaRole implements java.io.Serializable {
 		this.idRole = idRole;
 	}
 
-	public GefaRole(String idRole, String roleName, Set gefaUserses) {
+	public GefaRole(String idRole, String roleName, Set gefaUsers) {
 		this.idRole = idRole;
 		this.roleName = roleName;
-		this.gefaUserses = gefaUserses;
+		this.gefaUsers = gefaUsers;
 	}
 
 	public String getIdRole() {
@@ -42,12 +42,12 @@ public class GefaRole implements java.io.Serializable {
 		this.roleName = roleName;
 	}
 
-	public Set getGefaUserses() {
-		return this.gefaUserses;
+	public Set getGefaUsers() {
+		return this.gefaUsers;
 	}
 
-	public void setGefaUserses(Set gefaUserses) {
-		this.gefaUserses = gefaUserses;
+	public void setGefaUsers(Set gefaUsers) {
+		this.gefaUsers = gefaUsers;
 	}
 
 }

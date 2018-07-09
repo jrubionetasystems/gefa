@@ -4,6 +4,15 @@ import java.io.Serializable;
 
 public class RoleDTO  implements Serializable {
 	/**
+	 * @param roleId
+	 * @param roleName
+	 */
+	public RoleDTO(String roleId, String roleName) {
+		super();
+		this.roleId = roleId;
+		this.roleName = roleName;
+	}
+	/**
 	 * UID for serializable classes.
 	 */
 	private static final long serialVersionUID = 3984778276949983950L;

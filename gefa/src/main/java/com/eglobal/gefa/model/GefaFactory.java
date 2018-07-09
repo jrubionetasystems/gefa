@@ -1,5 +1,5 @@
 package com.eglobal.gefa.model;
-// Generated 1/07/2018 09:11:29 PM by Hibernate Tools 5.0.6.Final
+// Generated 4/07/2018 10:11:17 AM by Hibernate Tools 5.0.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +11,7 @@ public class GefaFactory implements java.io.Serializable {
 
 	private String idFactory;
 	private String factoryName;
-	private Set gefaUserses = new HashSet(0);
+	private Set gefaUsers = new HashSet(0);
 
 	public GefaFactory() {
 	}
@@ -20,10 +20,10 @@ public class GefaFactory implements java.io.Serializable {
 		this.idFactory = idFactory;
 	}
 
-	public GefaFactory(String idFactory, String factoryName, Set gefaUserses) {
+	public GefaFactory(String idFactory, String factoryName, Set gefaUsers) {
 		this.idFactory = idFactory;
 		this.factoryName = factoryName;
-		this.gefaUserses = gefaUserses;
+		this.gefaUsers = gefaUsers;
 	}
 
 	public String getIdFactory() {
@@ -42,12 +42,12 @@ public class GefaFactory implements java.io.Serializable {
 		this.factoryName = factoryName;
 	}
 
-	public Set getGefaUserses() {
-		return this.gefaUserses;
+	public Set getGefaUsers() {
+		return this.gefaUsers;
 	}
 
-	public void setGefaUserses(Set gefaUserses) {
-		this.gefaUserses = gefaUserses;
+	public void setGefaUsers(Set gefaUsers) {
+		this.gefaUsers = gefaUsers;
 	}
 
 }
