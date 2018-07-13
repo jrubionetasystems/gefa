@@ -32,11 +32,11 @@
 
     </bean>
 
-	<bean id="UserBusiness" class="com.eglobal.gefa.business.impl.UserBusinessImpl" >
-		<property name="userDao" ref="UserDao"/>
+	<bean id="userBusiness" class="com.eglobal.gefa.business.impl.UserBusinessImpl" >
+		<property name="userDao" ref="userDao"/>
 	</bean>
 
-	<bean id="UserDao" class="com.eglobal.gefa.dao.impl.UserDAOImpl" >
+	<bean id="userDao" class="com.eglobal.gefa.dao.impl.UserDAOImpl" >
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	

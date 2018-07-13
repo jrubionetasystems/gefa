@@ -14,9 +14,11 @@ public class Assembler {
 				                     gefaUser.getSurname(), 
 				                     gefaUser.getName(), 
 				                     gefaUser.getEmail(), 
-				                     gefaUser.getTelephone(), 
-				                     new RoleDTO(gefaUser.getGefaRole().getIdRole(), gefaUser.getGefaRole().getRoleName()), 
-				                     new FactoryDTO(gefaUser.getGefaFactory().getIdFactory(), gefaUser.getGefaFactory().getFactoryName()),
+				                     gefaUser.getTelephone(),
+				                     ( (gefaUser.getGefaRole()== null) ? null :
+				                        new RoleDTO(gefaUser.getGefaRole().getIdRole(), gefaUser.getGefaRole().getRoleName())) ,
+				                     ( (gefaUser.getGefaFactory()== null) ? null :
+				                     new FactoryDTO(gefaUser.getGefaFactory().getIdFactory(), gefaUser.getGefaFactory().getFactoryName())),
 				                     "",
 				                     "",
 				                     "",
@@ -42,4 +44,32 @@ public class Assembler {
 		return result;
 	}
 
+	
+	public static GefaRole roleDTO2GefaRole(RoleDTO roleDto) {
+		GefaRole result = new GefaRole();
+		result.setIdRole(roleDto.getRoleId());  
+		result.setRoleName(roleDto.getRoleName());
+		return result;
+	}
+
+	
+	public static RoleDTO gefaRole2RoleDTO(GefaRole gefaRole) {
+		RoleDTO result = new RoleDTO(gefaRole.getIdRole(), gefaRole.getRoleName());
+		return result;
+	}
+
+	
+	public static GefaFactory factoryDTO2GefaFactory(FactoryDTO factoryDto) {
+		GefaFactory result = new GefaFactory();
+		result.setIdFactory(factoryDto.getId());  
+		result.setFactoryName(factoryDto.getFactoryName());
+		return result;
+	}
+
+	
+	public static FactoryDTO gefaFactory2FactoryDTO(GefaFactory gefaFactory) {
+		FactoryDTO result = new FactoryDTO(gefaFactory.getIdFactory(), gefaFactory.getFactoryName());
+		return result;
+	}
+	
 }

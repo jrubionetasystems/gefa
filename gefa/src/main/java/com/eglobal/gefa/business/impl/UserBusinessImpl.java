@@ -14,6 +14,8 @@ import com.eglobal.gefa.dto.RoleDTO;
 import com.eglobal.gefa.dto.UserDTO;
 import com.eglobal.gefa.exception.BusinessException;
 import com.eglobal.gefa.exception.DaoException;
+import com.eglobal.gefa.model.GefaFactory;
+import com.eglobal.gefa.model.GefaRole;
 import com.eglobal.gefa.model.GefaUser;
 
 @Transactional
@@ -60,12 +62,32 @@ public class UserBusinessImpl implements UserBusiness, Serializable {
 
 	@Override
 	public List<RoleDTO> getRoles() throws BusinessException {
+		List<RoleDTO> result = null;
+		try {
+			List<GefaRole> roles = userDao.getRoles();
+			result = new ArrayList<RoleDTO>();
+			for (GefaRole gefaRole : roles) {
+				result.add(Assembler.gefaRole2RoleDTO(gefaRole));
+			}
+		} catch (DaoException daoE) {
+			throw new BusinessException(daoE);
+		}
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<FactoryDTO> getFactories() throws BusinessException {
+		List<FactoryDTO> result = null;
+		try {
+			List<GefaFactory> factories = userDao.getFactories();
+			result = new ArrayList<FactoryDTO>();
+			for (GefaFactory factory : factories) {
+				result.add(Assembler.gefaFactory2FactoryDTO(factory));
+			}
+		} catch (DaoException daoE) {
+			throw new BusinessException(daoE);
+		}
 		// TODO Auto-generated method stub
 		return null;
 	}

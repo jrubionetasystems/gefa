@@ -31,33 +31,27 @@
 				<h:outputText value="#{msg['user.catalog.image']}" />
 				<h:outputText value="#{msg['user.catalog.add.image']}" />
 			</h:panelGrid>
-			<h:panelGrid columns="4">
+			<h:panelGrid columns="4" style="font-size : 12px">
 				<h:outputText value="#{msg['user.catalog.name']}" style="font-size : 12px" />
-				<h:inputText id="input_name"/>
+				<h:inputText id="input_name" maxlength="40" size="40"/>
 				<h:outputText value="#{msg['user.catalog.surname']}" style="font-size : 12px"/>
-				<h:inputText id="input_surname"/>
-				<p:column colspan="2">
-				<p:message id="error_name" for="input_name"></p:message>
-				</p:column>
-				<p:column colspan="2">
-				<p:message id="error_surname" for="input_surname"></p:message>
-				</p:column>
+				<h:inputText id="input_surname" maxlength="50" size="50"/>
 				<h:outputText value="#{msg['user.catalog.username']}" style="font-size : 12px"/>
-				<h:inputText id="input_username"/>
+				<h:inputText id="input_username" maxlength="20" size="20"/>
 				<h:outputText value="#{msg['user.catalog.factory']}" style="font-size : 12px"/>
-				<h:inputText />
+				<h:inputText id="input_factory" maxlength="20" size="20"/>
 				<h:outputText value="#{msg['user.catalog.email']}" style="font-size : 12px"/>
-				<h:inputText />
+				<h:inputText id="input_email" maxlength="100" size="50"/>
 				<h:outputText value="#{msg['user.catalog.phone']}" style="font-size : 12px"/>
-				<h:inputText id="input_phone"/>
+				<h:inputText id="input_phone" maxlength="20" size="20"/>
 				<h:outputText value="#{msg['user.catalog.role']}" style="font-size : 12px"/>
-				<h:inputText />
+				<h:inputText id="input_role" maxlength="20" size="20"/>
 				<h:outputText value="#{msg['user.catalog.estatus']}" style="font-size : 12px"/>
-				<h:inputText id="input_password"/>
+				<h:inputText id="input_status" maxlength="20" size="20"/>
 				<h:outputText value="#{msg['user.catalog.password']}" style="font-size : 12px"/>
-				<p:password />
+				<p:password id="input_password" maxlength="20" size="20"/>
 				<h:outputText value="#{msg['user.catalog.confirm.password']}" style="font-size : 12px"/>
-				<p:password id="input_confirmPassword"/>
+				<p:password id="input_confirmPassword" maxlength="20" size="20"/>
 				<h:outputText value="#{msg['user.catalog.join.date']}" style="font-size : 12px"/>
 				<h:inputText />
 				<h:outputText value="#{msg['user.catalog.last.update.date']}" style="font-size : 12px"/>

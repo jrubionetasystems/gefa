@@ -10,6 +10,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 import com.eglobal.gefa.business.UserBusiness;
+import com.eglobal.gefa.dto.RoleDTO;
 import com.eglobal.gefa.dto.UserDTO;
 import com.eglobal.gefa.exception.BusinessException;
 
@@ -50,6 +51,17 @@ public class UsersManagedBean implements Serializable {
 		List<UserDTO> result = new ArrayList<UserDTO>();
 		try {
 			result = userBusiness.getUsers();
+		} catch (BusinessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	public List<RoleDTO> getRoles(){
+		List<RoleDTO> result = new ArrayList<RoleDTO>();
+		try {
+			result = userBusiness.getRoles();
 		} catch (BusinessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

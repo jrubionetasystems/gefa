@@ -7,13 +7,17 @@
 <h:head>
 </h:head>
 
-<h:body>
+<h:body style="font-size : 12px">
 	    <p:dataTable id="users" var="user" value="#{user.users}" rows="10" widgetVar="usersTable"
                          paginator="true"
                          paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-  	                     rowsPerPageTemplate="5,10,15">
-  	                       
+  	                     rowsPerPageTemplate="5,10,15" style="font-size : 12px">
+
         <f:facet name="header">
+        	<p:outputPanel >
+                <h:outputText value="+ Nuevo" />
+            </p:outputPanel>
+        
             <p:outputPanel >
             	<p:commandButton id="toggler" type="button" value="Ver columnas" style="float:right" icon="ui-icon-calculator" />
         		<p:columnToggler datasource="users" trigger="toggler" />
@@ -35,34 +39,32 @@
             </h:commandLink>
  
         </f:facet>
+
   	                       
-  	                       
-  	                       
-        <p:column headerText="#{msg['user.catalog.username']}">
-            <h:outputText value="#{user.username}" />
+        <p:column headerText="#{msg['user.catalog.username']}" style="font-size : 12px">
+            <h:outputText value="#{user.username}" style="font-size : 12px"/>
         </p:column>
  
-        <p:column headerText="#{msg['user.catalog.name']}">
-            <h:outputText value="#{user.year}" />
+        <p:column headerText="#{msg['user.catalog.name']}" style="font-size : 12px">
+            <h:outputText value="#{user.year}" style="font-size : 12px"/>
         </p:column>
  
-        <p:column headerText="#{msg['user.catalog.factory']}">
-            <h:outputText value="#{car.brand}" />
+        <p:column headerText="#{msg['user.catalog.factory']}" style="font-size : 12px">
+            <h:outputText value="#{car.brand}" style="font-size : 12px"/>
         </p:column>
  
-        <p:column headerText="#{msg['user.catalog.role']}">
-            <h:outputText value="#{car.color}" />
+        <p:column headerText="#{msg['user.catalog.role']}" style="font-size : 12px">
+            <h:outputText value="#{car.color}" style="font-size : 12px"/>
         </p:column>
          
         <f:facet name="paginatorTopLeft">
-            <p:commandButton type="button" icon="fa fa-sync" />
+            <p:commandButton type="button" icon="fa fa-sync" style="font-size : 12px"/>
         </f:facet>
  
         <f:facet name="paginatorBottomRight">
-            <p:commandButton type="button" icon="fa fa-cloud-upload" />
+            <p:commandButton type="button" icon="fa fa-cloud-upload" style="font-size : 12px"/>
         </f:facet>
     </p:dataTable>
-
 
 </h:body>
 </html>
