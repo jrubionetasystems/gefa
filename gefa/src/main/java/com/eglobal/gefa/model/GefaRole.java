@@ -1,5 +1,5 @@
 package com.eglobal.gefa.model;
-// Generated 4/07/2018 10:11:17 AM by Hibernate Tools 5.0.6.Final
+// Generated 25/07/2018 08:37:44 PM by Hibernate Tools 5.0.6.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,37 +9,38 @@ import java.util.Set;
  */
 public class GefaRole implements java.io.Serializable {
 
-	private String idRole;
-	private String roleName;
+	private String roleId;
+	private String name;
 	private Set gefaUsers = new HashSet(0);
 
 	public GefaRole() {
 	}
 
-	public GefaRole(String idRole) {
-		this.idRole = idRole;
+	public GefaRole(String roleId, String name) {
+		this.roleId = roleId;
+		this.name = name;
 	}
 
-	public GefaRole(String idRole, String roleName, Set gefaUsers) {
-		this.idRole = idRole;
-		this.roleName = roleName;
+	public GefaRole(String roleId, String name, Set gefaUsers) {
+		this.roleId = roleId;
+		this.name = name;
 		this.gefaUsers = gefaUsers;
 	}
 
-	public String getIdRole() {
-		return this.idRole;
+	public String getRoleId() {
+		return this.roleId;
 	}
 
-	public void setIdRole(String idRole) {
-		this.idRole = idRole;
+	public void setRoleId(String roleId) {
+		this.roleId = roleId;
 	}
 
-	public String getRoleName() {
-		return this.roleName;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public Set getGefaUsers() {

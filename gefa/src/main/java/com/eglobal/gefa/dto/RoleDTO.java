@@ -3,6 +3,10 @@ package com.eglobal.gefa.dto;
 import java.io.Serializable;
 
 public class RoleDTO  implements Serializable {
+	public RoleDTO() {
+		super();
+	}
+	
 	
 	/**
 	 * @param roleId

@@ -13,19 +13,12 @@ import com.eglobal.gefa.model.GefaFactory;
 import com.eglobal.gefa.model.GefaRole;
 import com.eglobal.gefa.model.GefaUser;
 
-/**
- * This class implements Data Access method for User Catalog
- * @author Neta Systems / Jorge Rubio
- */
+/** This class implements Data Access method for User Catalog
+ * @author Neta Systems / Jorge Rubio */
 public class UserDAOImpl implements UserDAO, Serializable {
-
-	/**
-	 * UID for Serializable classes.
-	 */
+	/** UID for Serializable classes. */
 	private static final long serialVersionUID = -559178015638575137L;
-	/**
-	 * Reference to session Factory
-	 */
+	/** Reference to session Factory */
 	private SessionFactory sessionFactory;
 
 	public SessionFactory getSessionFactory() {
@@ -39,7 +32,7 @@ public class UserDAOImpl implements UserDAO, Serializable {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<GefaUser> getUsers() throws DaoException {
-		
+
 		Session session = null;
 		List<GefaUser> result = null;
 		try {
@@ -53,8 +46,29 @@ public class UserDAOImpl implements UserDAO, Serializable {
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
-			}	
-		}	
+			}
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<GefaUser> getUsers(GefaFactory gefaFactory) throws DaoException {
+
+		Session session = null;
+		List<GefaUser> result = null;
+		try {
+			session = sessionFactory.openSession();
+			result = session.createQuery("FROM GefaUser").getResultList();
+			return result;
+		} catch (HibernateException hex) {
+			throw new DaoException(hex);
+		} catch (Exception e) {
+			throw new DaoException(e);
+		} finally {
+			if (session != null && session.isOpen()) {
+				session.close();
+			}
+		}
 	}
 
 	@SuppressWarnings("unchecked")
@@ -71,8 +85,8 @@ public class UserDAOImpl implements UserDAO, Serializable {
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
-			}	
-		}	
+			}
+		}
 	}
 
 	@SuppressWarnings("unchecked")
@@ -89,7 +103,7 @@ public class UserDAOImpl implements UserDAO, Serializable {
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
-			}	
+			}
 		}
 	}
 
@@ -104,9 +118,9 @@ public class UserDAOImpl implements UserDAO, Serializable {
 		} finally {
 			if (session != null && session.isOpen()) {
 				session.close();
-			}	
+			}
 		}
-		
+
 	}
 
 }

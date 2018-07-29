@@ -1,31 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 4/07/2018 10:11:17 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="false">
-    <class catalog="gefa" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.eglobal.gefa.model.GefaUser" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="GEFA_USER">
-        <id name="idUser" type="string">
-            <column length="20" name="id_user"/>
+<!-- Generated 25/07/2018 08:37:44 PM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="gefa" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.eglobal.gefa.model.GefaUser" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="gefa_user">
+        <id name="userId" type="string">
+            <column length="20" name="user_id"/>
             <generator class="assigned"/>
         </id>
         <many-to-one class="com.eglobal.gefa.model.GefaFactory" embed-xml="true" fetch="select" insert="true" name="gefaFactory" not-found="exception" optimistic-lock="true" unique="false" update="true">
-            <column length="20" name="id_factory"/>
+            <column length="10" name="factory_id" not-null="true"/>
         </many-to-one>
         <many-to-one class="com.eglobal.gefa.model.GefaRole" embed-xml="true" fetch="select" insert="true" name="gefaRole" not-found="exception" optimistic-lock="true" unique="false" update="true">
-            <column length="20" name="id_role"/>
+            <column length="10" name="role_id" not-null="true"/>
         </many-to-one>
-        <property generated="never" lazy="false" name="username" optimistic-lock="true" type="string" unique="false">
-            <column length="20" name="username" not-null="true"/>
-        </property>
-        <property generated="never" lazy="false" name="surname" optimistic-lock="true" type="string" unique="false">
-            <column length="50" name="surname"/>
-        </property>
         <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
             <column length="40" name="name"/>
         </property>
+        <property generated="never" lazy="false" name="surname" optimistic-lock="true" type="string" unique="false">
+            <column length="40" name="surname"/>
+        </property>
+        <property generated="never" lazy="false" name="creationDate" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="creation_date"/>
+        </property>
+        <property generated="never" lazy="false" name="lastUpdateDate" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="last_update_date"/>
+        </property>
+        <property generated="never" lazy="false" name="password" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="password"/>
+        </property>
+        <property generated="never" lazy="false" name="status" optimistic-lock="true" type="string" unique="false">
+            <column length="3" name="status"/>
+        </property>
+        <property generated="never" lazy="false" name="image" optimistic-lock="true" type="binary" unique="false">
+            <column name="image"/>
+        </property>
         <property generated="never" lazy="false" name="email" optimistic-lock="true" type="string" unique="false">
             <column length="100" name="email"/>
-        </property>
+        </property>        
         <property generated="never" lazy="false" name="telephone" optimistic-lock="true" type="string" unique="false">
-            <column length="20" name="telephone"/>
+            <column length="100" name="telephone"/>
         </property>
     </class>
 </hibernate-mapping>

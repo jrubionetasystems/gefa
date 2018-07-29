@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 4/07/2018 10:11:17 AM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/07/2018 08:37:44 PM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
-    <class catalog="gefa" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.eglobal.gefa.model.GefaRole" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="GEFA_ROLE">
-        <id name="idRole" type="string">
-            <column length="20" name="id_role"/>
+    <class catalog="gefa" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.eglobal.gefa.model.GefaRole" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="gefa_role">
+        <id name="roleId" type="string">
+            <column length="10" name="role_id"/>
             <generator class="assigned"/>
         </id>
-        <property generated="never" lazy="false" name="roleName" optimistic-lock="true" type="string" unique="false">
-            <column length="50" name="role_name"/>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="name" not-null="true"/>
         </property>
-        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="gefaUsers" optimistic-lock="true" sort="unsorted" table="GEFA_USER">
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="gefaUsers" optimistic-lock="true" sort="unsorted" table="gefa_user">
             <key on-delete="noaction">
-                <column length="20" name="id_role"/>
+                <column length="10" name="role_id" not-null="true"/>
             </key>
             <one-to-many class="com.eglobal.gefa.model.GefaUser" embed-xml="true" not-found="exception"/>
         </set>

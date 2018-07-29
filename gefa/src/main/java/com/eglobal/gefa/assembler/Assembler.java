@@ -7,69 +7,128 @@ import com.eglobal.gefa.model.GefaFactory;
 import com.eglobal.gefa.model.GefaRole;
 import com.eglobal.gefa.model.GefaUser;
 
+/**
+ * This class is used to convert objects from source type to target type.
+ * 
+ * @author Neta Systems / Jorge Rubio.
+ */
 public class Assembler {
-	public static UserDTO gefaUsers2UserDTO(GefaUser gefaUser) {
-		UserDTO result = new UserDTO(gefaUser.getIdUser(), 
-				                     gefaUser.getUsername(), 
-				                     gefaUser.getSurname(), 
-				                     gefaUser.getName(), 
-				                     gefaUser.getEmail(), 
-				                     gefaUser.getTelephone(),
-				                     ( (gefaUser.getGefaRole()== null) ? null :
-				                        new RoleDTO(gefaUser.getGefaRole().getIdRole(), gefaUser.getGefaRole().getRoleName())) ,
-				                     ( (gefaUser.getGefaFactory()== null) ? null :
-				                     new FactoryDTO(gefaUser.getGefaFactory().getIdFactory(), gefaUser.getGefaFactory().getFactoryName())),
-				                     "",
-				                     "",
-				                     "",
-				                     null, 
-				                     null);
-		return result;
+	/**
+	 * Converts a GefaUser Object to a UserDTO object
+	 * 
+	 * @param gefaUser
+	 *            Object to convert
+	 * @return DTO object gotten.
+	 */
+	public static UserDTO gefaUsers2UserDTO(final GefaUser gefaUser) {
+		return new UserDTO(gefaUser.getUserId(), gefaUser.getName(), gefaUser.getSurname(), gefaUser.getName(),
+				gefaUser.getEmail(), gefaUser.getTelephone(), gefaRole2RoleDTONameEmpty(gefaUser.getGefaRole()),
+				gefaFactory2FactoryDTONameEmpty(gefaUser.getGefaFactory()), gefaUser.getStatus(),
+				gefaUser.getPassword(), "", gefaUser.getCreationDate(), gefaUser.getLastUpdateDate());
 	}
 
-	
-	public static GefaUser userDTO2GefaUser(UserDTO userDto) {
-		GefaUser result = new GefaUser();
-		result.setUsername(userDto.getUsername());
+	/**
+	 * Converts a UserDto Object to a GefaUser object
+	 * 
+	 * @param userDto
+	 *            Object to Convert
+	 * @return GefaUser object gotten.
+	 */
+	public static GefaUser userDTO2GefaUser(final UserDTO userDto) {
+		final GefaUser result = new GefaUser();
+		result.setUserId(userDto.getUsername());
 		result.setSurname(userDto.getSurname());
 		result.setName(userDto.getName());
 		result.setEmail(userDto.getEmail());
 		result.setTelephone(userDto.getTelephone());
-		GefaFactory gefaFactory = new GefaFactory();
-		gefaFactory.setIdFactory(userDto.getFactory().getId());
-		result.setGefaFactory(gefaFactory);
-		GefaRole role = new GefaRole();
-		role.setIdRole(userDto.getRole().getRoleId());
-		result.setGefaRole(role);
+		result.setGefaFactory(factoryDTO2GefaFactory(userDto.getFactory()));
+		result.setGefaRole(roleDTO2GefaRole(userDto.getRole()));
 		return result;
 	}
 
-	
-	public static GefaRole roleDTO2GefaRole(RoleDTO roleDto) {
-		GefaRole result = new GefaRole();
-		result.setIdRole(roleDto.getRoleId());  
-		result.setRoleName(roleDto.getRoleName());
+	/**
+	 * Converts a RoleDto Object to a GefaRole object
+	 * 
+	 * @param roleDto
+	 *            Object to Convert
+	 * @return object gotten.
+	 */
+	public static GefaRole roleDTO2GefaRole(final RoleDTO roleDto) {
+		final GefaRole result = new GefaRole();
+		result.setRoleId(roleDto.getRoleId());
+		result.setName(roleDto.getRoleName());
 		return result;
 	}
 
-	
-	public static RoleDTO gefaRole2RoleDTO(GefaRole gefaRole) {
-		RoleDTO result = new RoleDTO(gefaRole.getIdRole(), gefaRole.getRoleName());
+	/**
+	 * Converts a GefaRole Object to a RoleDTO object
+	 * 
+	 * @param gefaRole
+	 *            Object to convert
+	 * @return object gotten.
+	 */
+	public static RoleDTO gefaRole2RoleDTO(final GefaRole gefaRole) {
+		return new RoleDTO(gefaRole.getRoleId(), gefaRole.getName());
+	}
+
+	/**
+	 * Converts a GefaRole Object to a RoleDTO object setting the name value to
+	 * blanks
+	 * 
+	 * @param gefaRole
+	 *            Object to convert
+	 * @return Object gotten
+	 */
+	public static RoleDTO gefaRole2RoleDTONameEmpty(final GefaRole gefaRole) {
+		RoleDTO result;
+		if (gefaRole == null) {
+			result = new RoleDTO();
+		} else {
+			result = new RoleDTO(gefaRole.getRoleId(), "");
+		}
 		return result;
 	}
 
-	
-	public static GefaFactory factoryDTO2GefaFactory(FactoryDTO factoryDto) {
-		GefaFactory result = new GefaFactory();
-		result.setIdFactory(factoryDto.getId());  
-		result.setFactoryName(factoryDto.getFactoryName());
+	/**
+	 * Converts a FactoryDTO Object to a GefaFactory object
+	 * 
+	 * @param factoryDto
+	 *            Object to convert
+	 * @return Object gotten
+	 */
+	public static GefaFactory factoryDTO2GefaFactory(final FactoryDTO factoryDto) {
+		final GefaFactory result = new GefaFactory();
+		result.setFactoryId(factoryDto.getId());
+		result.setName(factoryDto.getFactoryName());
 		return result;
 	}
 
-	
-	public static FactoryDTO gefaFactory2FactoryDTO(GefaFactory gefaFactory) {
-		FactoryDTO result = new FactoryDTO(gefaFactory.getIdFactory(), gefaFactory.getFactoryName());
+	/**
+	 * Converts a GefaFactory Object to a FactoryDTO object
+	 * 
+	 * @param gefaFactory
+	 *            Object to Convert
+	 * @return object gotten
+	 */
+	public static FactoryDTO gefaFactory2FactoryDTO(final GefaFactory gefaFactory) {
+		return new FactoryDTO(gefaFactory.getFactoryId(), gefaFactory.getName());
+	}
+
+	/**
+	 * Converts a GefaFactory Object to a FactoryDTO object setting the name value
+	 * to blanks
+	 * 
+	 * @param gefaFactory
+	 * @return
+	 */
+	public static FactoryDTO gefaFactory2FactoryDTONameEmpty(final GefaFactory gefaFactory) {
+		FactoryDTO result;
+		if (gefaFactory == null) {
+			result = new FactoryDTO();
+		} else {
+			result = new FactoryDTO(gefaFactory.getFactoryId(), "");
+		}
 		return result;
 	}
-	
+
 }

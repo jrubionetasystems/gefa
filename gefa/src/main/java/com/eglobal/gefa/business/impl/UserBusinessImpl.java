@@ -18,7 +18,7 @@ import com.eglobal.gefa.model.GefaFactory;
 import com.eglobal.gefa.model.GefaRole;
 import com.eglobal.gefa.model.GefaUser;
 
-@Transactional
+@Transactional(readOnly = true)
 public class UserBusinessImpl implements UserBusiness, Serializable {
 	/**
 	 * UID for serializable classes.
@@ -57,7 +57,7 @@ public class UserBusinessImpl implements UserBusiness, Serializable {
 			throw new BusinessException(daoE);
 		}
 		// TODO Auto-generated method stub
-		return null;
+		return result;
 	}
 
 	@Override

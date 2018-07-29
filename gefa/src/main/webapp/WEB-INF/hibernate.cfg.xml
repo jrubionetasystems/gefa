@@ -10,6 +10,12 @@
         <!-- Pojos Mapping -->
         <mapping resource="/com/eglobal/gefa/model/GefaUser.hbm.xml"/>
         <mapping resource="/com/eglobal/gefa/model/GefaRole.hbm.xml"/>
-        <mapping resource="/com/eglobal/gefa/model/GefaFactory.hbm.xml"/>
+        <mapping resource="/com/eglobal/gefa/model/GefaFactory.hbm.xml"/>        
+        <mapping resource="/com/eglobal/gefa/model/GefaIncidence.hbm.xml"/>
+        <mapping resource="/com/eglobal/gefa/model/GefaModification.hbm.xml"/>
+        <mapping resource="/com/eglobal/gefa/model/GefaPlatform.hbm.xml"/>
+        <mapping resource="/com/eglobal/gefa/model/GefaQuestion.hbm.xml"/>
+        <mapping resource="/com/eglobal/gefa/model/GefaWorkOrder.hbm.xml"/>
+        
     </session-factory>
 </hibernate-configuration>
