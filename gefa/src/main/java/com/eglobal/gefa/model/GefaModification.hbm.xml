@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 25/07/2018 08:37:44 PM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="gefa" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.eglobal.gefa.model.GefaModification" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="gefa_modification">
+        <composite-id class="com.eglobal.gefa.model.GefaModificationId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="workOrderId" type="string">
+                <column length="10" name="work_order_id"/>
+            </key-property>
+            <key-property name="modificationId" type="int">
+                <column name="modification_id"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="com.eglobal.gefa.model.GefaWorkOrder" embed-xml="true" fetch="select" insert="false" name="gefaWorkOrder" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column length="10" name="work_order_id" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="shortName" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="short_name"/>
+        </property>
+        <property generated="never" lazy="false" name="description" optimistic-lock="true" type="string" unique="false">
+            <column length="10000" name="description"/>
+        </property>
+    </class>
+</hibernate-mapping>

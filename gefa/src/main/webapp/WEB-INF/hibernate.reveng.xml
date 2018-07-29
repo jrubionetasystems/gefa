@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="gefa" match-name="gefa_factory"/>
+  <table-filter match-catalog="gefa" match-name="gefa_incidence"/>
+  <table-filter match-catalog="gefa" match-name="gefa_modification"/>
+  <table-filter match-catalog="gefa" match-name="gefa_platform"/>
+  <table-filter match-catalog="gefa" match-name="gefa_question"/>
+  <table-filter match-catalog="gefa" match-name="gefa_role"/>
+  <table-filter match-catalog="gefa" match-name="gefa_user"/>
+  <table-filter match-catalog="gefa" match-name="gefa_work_order"/>
+</hibernate-reverse-engineering>

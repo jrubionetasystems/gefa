@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 25/07/2018 08:37:44 PM by Hibernate Tools 5.0.6.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="gefa" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.eglobal.gefa.model.GefaUser" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="gefa_user">
+        <id name="userId" type="string">
+            <column length="20" name="user_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="name" optimistic-lock="true" type="string" unique="false">
+            <column length="40" name="name"/>
+        </property>
+        <property generated="never" lazy="false" name="surname" optimistic-lock="true" type="string" unique="false">
+            <column length="40" name="surname"/>
+        </property>
+        <property generated="never" lazy="false" name="creationDate" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="creation_date"/>
+        </property>
+        <property generated="never" lazy="false" name="lastUpdateDate" optimistic-lock="true" type="date" unique="false">
+            <column length="10" name="last_update_date"/>
+        </property>
+        <property generated="never" lazy="false" name="password" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="password"/>
+        </property>
+        <property generated="never" lazy="false" name="status" optimistic-lock="true" type="string" unique="false">
+            <column length="3" name="status"/>
+        </property>
+        <property generated="never" lazy="false" name="image" optimistic-lock="true" type="binary" unique="false">
+            <column name="image"/>
+        </property>
+        <property generated="never" lazy="false" name="email" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="email"/>
+        </property>        
+        <property generated="never" lazy="false" name="telephone" optimistic-lock="true" type="string" unique="false">
+            <column length="100" name="telephone"/>
+        </property>
+        <property generated="never" lazy="false" name="roleId" optimistic-lock="true" type="string" unique="false">
+            <column length="40" name="role_Id"/>
+        </property>
+        <property generated="never" lazy="false" name="factoryId" optimistic-lock="true" type="string" unique="false">
+            <column length="40" name="factory_Id"/>
+        </property>
+    </class>
+</hibernate-mapping>
